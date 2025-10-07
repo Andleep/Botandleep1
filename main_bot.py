@@ -340,4 +340,11 @@ def main():
         raise
 
 if __name__ == "__main__":
-    main()
+    # على Render، استخدم start_bot.py بدلاً من التشغيل المباشر
+    if os.getenv('RENDER', False):
+        print("🔧 التشغيل على بيئة Render - استخدم start_bot.py")
+        from start_bot import run_bot_on_render
+        run_bot_on_render()
+    else:
+        # التشغيل المحلي
+        main()
