@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: super-trading-bot
+    env: docker
+    plan: free
+    envVars:
+      - key: BINANCE_API_KEY
+        value: your_api_key_here
+      - key: BINANCE_API_SECRET  
+        value: your_api_secret_here
+      - key: INITIAL_BALANCE
+        value: 10.0
+      - key: SELECTED_PAIRS
+        value: BTCUSDT,ETHUSDT,BNBUSDT,ADAUSDT,XRPUSDT
+    numInstances: 1
